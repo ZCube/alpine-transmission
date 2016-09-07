@@ -13,13 +13,12 @@ COPY src/ .
 VOLUME ["/transmission/downloads"]
 VOLUME ["/transmission/incomplete"]
 
-RUN mkdir /transmission/mem \
-  && echo none /transmission/mem ramfs  defaults,size=2048M   0     0 >> /etc/fstab
-
 EXPOSE 9091 51413/tcp 51413/udp
 
 ENV USERNAME admin
 ENV PASSWORD password
+ENV INCOMPLETE_FS fs
+ENV INCOMPLETE_SIZE 2048M
 
 RUN chmod +x /start-transmission.sh
 CMD ["/start-transmission.sh"]
