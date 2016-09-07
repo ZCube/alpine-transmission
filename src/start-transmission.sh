@@ -38,7 +38,6 @@ elif [ "$INCOMPLETE_FS" == "tmpfs" ]; then
   else
     mount -t tmpfs -o size=$INCOMPLETE_SIZE tmpfs /transmission/incomplete
   fi
-else
 fi
 
 unset PASSWORD USERNAME
