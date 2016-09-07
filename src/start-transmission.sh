@@ -40,7 +40,6 @@ elif [ "$INCOMPLETE_FS" == "tmpfs" ]; then
   fi
 else
 fi
-fi
 
 unset PASSWORD USERNAME
 
