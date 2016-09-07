@@ -13,8 +13,8 @@ COPY src/ .
 VOLUME ["/transmission/downloads"]
 VOLUME ["/transmission/incomplete"]
 
-mkdir /transmission/mem
-echo none /transmission/mem ramfs  defaults,size=2048M   0     0 >> /etc/fstab
+RUN mkdir /transmission/mem \
+  && echo none /transmission/mem ramfs  defaults,size=2048M   0     0 >> /etc/fstab
 
 EXPOSE 9091 51413/tcp 51413/udp
 
